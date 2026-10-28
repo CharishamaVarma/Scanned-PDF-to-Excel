@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Scanned PDF-to-Excel Application
 
 A beginner-friendly Python desktop application that uses **PyMuPDF**, **Tesseract OCR**, and **OpenPyXL** to read scanned PDF pages and export recognized text into an editable Excel workbook. It can optionally compare extracted text with values in an existing `.xlsx` workbook.
@@ -56,3 +57,7 @@ The output workbook contains `Extracted Data` and `Run Info` sheets, plus a `Com
 
 ## Technologies
 Python, OCR (Tesseract), PyMuPDF, Pillow, OpenPyXL, Excel.
+=======
+# Scanned-PDF-to-Excel
+A Python-based application that uses OCR, PyMuPDF, and Tesseract to extract text from scanned PDF documents and OpenPyXL to export results to Excel. Supports comparing extracted data with spreadsheet records to identify matching and mismatching entries.
+>>>>>>> cef1be23ca44b837119b7371efea16cfd6794a26
