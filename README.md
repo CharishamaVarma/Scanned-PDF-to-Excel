@@ -61,3 +61,45 @@ Python, OCR (Tesseract), PyMuPDF, Pillow, OpenPyXL, Excel.
 # Scanned-PDF-to-Excel
 A Python-based application that uses OCR, PyMuPDF, and Tesseract to extract text from scanned PDF documents and OpenPyXL to export results to Excel. Supports comparing extracted data with spreadsheet records to identify matching and mismatching entries.
 >>>>>>> cef1be23ca44b837119b7371efea16cfd6794a26
+## System Architecture
+
+The application follows a step-by-step pipeline to extract text from scanned PDF documents and convert it into an Excel workbook.
+
+```mermaid
+flowchart TD
+    A([User]) --> B[Upload Scanned PDF]
+    B --> C[Tkinter User Interface]
+    C --> D[PDF Processing using PyMuPDF]
+    D --> E{Selectable Text Available?}
+
+    E -->|Yes| F[Extract Embedded Text]
+    E -->|No| G[Render PDF Pages as Images]
+    G --> H[Text Recognition using Tesseract OCR]
+
+    F --> I[Python Text Processing]
+    H --> I
+
+    I --> J[Organize Text by Page and Line]
+    J --> K[Generate Excel Workbook using OpenPyXL]
+    K --> L[Format Excel Workbook]
+    L --> M([Output: Extracted Data.xlsx])
+
+    classDef user fill:#EDE5FF,stroke:#8064B5,color:#30234D
+    classDef process fill:#E5F1FF,stroke:#6595CE,color:#173A61
+    classDef ocr fill:#FFF0D9,stroke:#D9A34C,color:#70430B
+    classDef output fill:#DFF4E6,stroke:#66AC80,color:#174D2B
+
+    class A,B,C user
+    class D,E,F,I,J,K,L process
+    class G,H ocr
+    class M output
+```
+
+### Architecture Components
+
+1. **User Interface:** Tkinter lets users select a PDF and choose the Excel output location.
+2. **PDF Processing:** PyMuPDF opens the PDF and renders scanned pages as images when necessary.
+3. **Text Extraction:** Embedded text is extracted directly, or Tesseract OCR recognizes text from scanned images.
+4. **Text Processing:** Python organizes the extracted text with page and line numbers.
+5. **Excel Generation:** OpenPyXL creates and formats the `.xlsx` workbook.
+6. **Output:** The user receives an Excel file containing the extracted text and available OCR confidence information.
