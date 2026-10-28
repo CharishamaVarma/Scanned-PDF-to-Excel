@@ -97,3 +97,9 @@ flowchart TD
 4. **Text Processing:** Python organizes the extracted text with page and line numbers.
 5. **Excel Generation:** OpenPyXL creates and formats the `.xlsx` workbook.
 6. **Output:** The user receives an Excel file containing the extracted text and available OCR confidence information.
+## Author
+
+**Gayathri Charishma Vegesana**
+
+- GitHub: [CharishamaVarma](https://github.com/CharishamaVarma)
+- Project: Scanned PDF-to-Excel 
