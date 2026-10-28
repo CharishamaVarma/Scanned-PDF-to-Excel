@@ -55,9 +55,6 @@ The output workbook contains `Extracted Data` and `Run Info` sheets, plus a `Com
 - OCR can misread characters, especially in low-quality scans, handwritten documents, or skewed pages. Always review the output.
 - The comparison checks whether a normalized extracted line appears as a cell value in the selected workbook; it is not fuzzy matching.
 
-## Technologies
-Python, OCR (Tesseract), PyMuPDF, Pillow, OpenPyXL, Excel.
-=======
 ## System Architecture
 
 The application follows a step-by-step pipeline to extract text from scanned PDF documents and convert it into an Excel workbook.
